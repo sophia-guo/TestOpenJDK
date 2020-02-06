@@ -1,0 +1,13 @@
+# action.yml
+name: 'TestsOpenJDK'
+description: 'Running tests against OpenJD'
+inputs:
+  test_target:  # id of input
+    description: 'running test target'
+    required: false
+    default: '_jdk_math'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.test_target }}
